@@ -96,7 +96,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $item = User::findOrFail($id);
-        if ($user->can('edit', $item)) {
+        if ($user->can('apdate', $item)) {
             return view('admin.users.edit', compact('item'));
         } else {
             return redirect()->route('admin.users.index')
